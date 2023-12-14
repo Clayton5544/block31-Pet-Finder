@@ -2,22 +2,21 @@ const express = require('express');
 const app = express();
 
 app.get('/api/v1/pets', (req, res) => {
-    res.send('Get all pets')
+    res.sendFile(__dirname + '/index.html');
     
-})
+});
 
 app.get('/api/v1/pets/name', (req, res) => {
-    res.send('Get pet by name')
+    res.sendFile(__dirname = + '/petsName.html');
     
-})
+});
 
 app.get('/api/v1/pets/owner', (req, res) => {
-    res.send('Get pet by owner name')
-    
-})
+    res.sendFile(__dirname = + '/ownerName.html');    
+});
 
-const petsRouter = require('./Routes/pets')
+const petsRouter = require('./Routes/pets');
 
-app.use('/pets', petsRouter)
+app.use('/pets', petsRouter);
 
-app.listen(8080)
+app.listen(8080);
